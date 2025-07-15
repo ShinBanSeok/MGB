@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - Shopping Mall</title>
+    <link rel="stylesheet" href="register-styles.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <div class="logo">
+                <h1>Shopping Mall</h1>
+                <p>새로운 계정을 만들어 쇼핑을 시작하세요</p>
+            </div>
+            
+            <form id="register-form" class="register-form">
+                <div class="input-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" required placeholder="이메일을 입력하세요">
+                    <div class="email-check">
+                        <button type="button" id="check-email-btn">중복 확인</button>
+                        <span id="email-status"></span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password" required placeholder="비밀번호를 입력하세요 (8자 이상)">
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill"></div>
+                        </div>
+                        <span class="strength-text">비밀번호 강도</span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="confirm-password">비밀번호 확인</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="비밀번호를 다시 입력하세요">
+                    <span id="password-match" class="match-indicator"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="phone">전화번호</label>
+                    <input type="tel" id="phone" name="phone" placeholder="010-1234-5678">
+                </div>
+                
+                <div class="input-group">
+                    <label for="birth">생년월일</label>
+                    <input type="date" id="birth" name="birth">
+                </div>
+                
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="agree-terms" required>
+                        <span class="checkmark"></span>
+                        <span>이용약관에 동의합니다 (필수)</span>
+                        <a href="#" class="terms-link">보기</a>
+                    </label>
+                    
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="agree-privacy" required>
+                        <span class="checkmark"></span>
+                        <span>개인정보 처리방침에 동의합니다 (필수)</span>
+                        <a href="#" class="terms-link">보기</a>
+                    </label>
+                    
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="agree-marketing">
+                        <span class="checkmark"></span>
+                        <span>마케팅 정보 수신에 동의합니다 (선택)</span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="register-btn" disabled>회원가입</button>
+            </form>
+            
+            <div class="login-link">
+                <p>이미 계정이 있으신가요? <a href="login.html">로그인</a></p>
+            </div>
+            
+            <div class="back-to-shop">
+                <a href="index.html">← 쇼핑몰로 돌아가기</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>회원가입 중...</p>
+    </div>
+
+    <div id="terms-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">약관</h2>
+            <div id="modal-text" class="modal-text"></div>
+        </div>
+    </div>
+
+    <script src="register-script.js"></script>
+</body>
+</html>

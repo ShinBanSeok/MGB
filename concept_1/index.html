@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo"><a href="index.html">MGB</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#collection">COLLECTION</a></li>
+                    <li><a href="#lookbook">LOOKBOOK</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="login.html" class="login-link" id="login-nav-link">LOGIN</a></li>
+                    <li><a href="mypage.html" class="mypage-link" id="mypage-nav-link" style="display: none;">MY PAGE</a></li>
+                </ul>
+                <div class="user-section">
+                    <span id="user-greeting" class="user-greeting"></span>
+                    <div class="cart-icon">
+                        <span class="cart-count">0</span>
+                        🛒
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=1080&fit=crop&crop=center" alt="MGB Fashion">
+                <div class="hero-overlay">
+                    <div class="hero-content">
+                        <h1>SPRING/SUMMER 2024</h1>
+                        <p>DISCOVER THE NEW COLLECTION</p>
+                        <a href="#collection" class="hero-cta">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Product Banner -->
+        <section class="featured-banner">
+            <div class="banner-grid">
+                <div class="banner-item large">
+                    <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=1000&fit=crop&crop=center" alt="Featured Product">
+                    <div class="banner-content">
+                        <h2>NEW ARRIVALS</h2>
+                        <p>Essential pieces for the modern wardrobe</p>
+                        <a href="product-detail.html?id=1" class="banner-link">EXPLORE</a>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&h=800&fit=crop&crop=center" alt="Accessories">
+                    <div class="banner-content">
+                        <h3>ACCESSORIES</h3>
+                        <a href="#collection" class="banner-link">VIEW ALL</a>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop&crop=center" alt="Footwear">
+                    <div class="banner-content">
+                        <h3>FOOTWEAR</h3>
+                        <a href="product-detail.html?id=4" class="banner-link">SHOP</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collection Section -->
+        <section id="collection" class="collection-section">
+            <div class="section-header">
+                <h2>FEATURED COLLECTION</h2>
+                <p>Carefully curated pieces that define contemporary style</p>
+            </div>
+            
+            <div class="collection-grid">
+                <div class="collection-item" onclick="goToProductDetail(1)">
+                    <div class="product-image">
+                        <img src="https://ambient.diskn.com/detailimg/25SS/MEN/top/IM2E2TO08/black/250114_INSILENCE_DAY%201_0190.jpg" alt="Back Print Logo Tee">
+                        <div class="product-overlay">
+                            <button class="quick-add" data-id="1" onclick="event.stopPropagation()">QUICK ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>BACK PRINT LOGO TEE</h3>
+                        <p class="price">₩43,200</p>
+                    </div>
+                </div>
+
+                <div class="collection-item" onclick="goToProductDetail(2)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=600&fit=crop&crop=center" alt="Oversized Hoodie">
+                        <div class="product-overlay">
+                            <button class="quick-add" data-id="2" onclick="event.stopPropagation()">QUICK ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>OVERSIZED HOODIE</h3>
+                        <p class="price">₩89,000</p>
+                    </div>
+                </div>
+
+                <div class="collection-item" onclick="goToProductDetail(3)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&h=600&fit=crop&crop=center" alt="Wide Cargo Pants">
+                        <div class="product-overlay">
+                            <button class="quick-add" data-id="3" onclick="event.stopPropagation()">QUICK ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>WIDE CARGO PANTS</h3>
+                        <p class="price">₩125,000</p>
+                    </div>
+                </div>
+
+                <div class="collection-item" onclick="goToProductDetail(4)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=600&fit=crop&crop=center" alt="Minimal Sneakers">
+                        <div class="product-overlay">
+                            <button class="quick-add" data-id="4" onclick="event.stopPropagation()">QUICK ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>MINIMAL SNEAKERS</h3>
+                        <p class="price">₩149,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-all">
+                <a href="#collection" class="view-all-btn">VIEW ALL PRODUCTS</a>
+            </div>
+        </section>
+
+        <!-- Lookbook Section -->
+        <section id="lookbook" class="lookbook-section">
+            <div class="lookbook-grid">
+                <div class="lookbook-item">
+                    <img src="https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=800&h=1000&fit=crop&crop=center" alt="Lookbook 1">
+                    <div class="lookbook-overlay">
+                        <h3>URBAN ESSENTIALS</h3>
+                        <p>Discover the perfect balance of comfort and style</p>
+                    </div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=1000&fit=crop&crop=center" alt="Lookbook 2">
+                    <div class="lookbook-overlay">
+                        <h3>MINIMAL AESTHETIC</h3>
+                        <p>Clean lines and sophisticated silhouettes</p>
+                    </div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=1000&fit=crop&crop=center" alt="Lookbook 3">
+                    <div class="lookbook-overlay">
+                        <h3>CONTEMPORARY EDGE</h3>
+                        <p>Modern interpretations of classic designs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Story Section -->
+        <section class="brand-story">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>MGB PHILOSOPHY</h2>
+                    <p>We believe in creating timeless pieces that transcend seasons and trends. Each garment is carefully crafted with attention to detail, quality materials, and sustainable practices.</p>
+                    <p>Our mission is to provide contemporary fashion that empowers individual expression while maintaining the highest standards of craftsmanship.</p>
+                    <a href="#about" class="story-link">LEARN MORE</a>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&h=600&fit=crop&crop=center" alt="Brand Story">
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>STAY UPDATED</h2>
+                <p>Be the first to know about new releases, exclusive offers, and behind-the-scenes content</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" class="newsletter-input">
+                    <button class="newsletter-btn">SUBSCRIBE</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>CUSTOMER SERVICE</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="#">About MGB</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>CONNECT</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>NEWSLETTER</h3>
+                    <p>Subscribe for updates and exclusive offers</p>
+                    <div class="footer-newsletter">
+                        <input type="email" placeholder="Email">
+                        <button>SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MGB. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>SHOPPING BAG</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>TOTAL: ₩<span id="total-price">0</span></strong>
+            </div>
+            <button class="checkout-btn">CHECKOUT</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

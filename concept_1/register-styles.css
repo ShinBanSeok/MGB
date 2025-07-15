@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.register-box {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.logo h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.logo p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.register-form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.email-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#check-email-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+#check-email-btn:hover {
+    background: #2980b9;
+}
+
+#email-status {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#email-status.available {
+    color: #27ae60;
+}
+
+#email-status.unavailable {
+    color: #e74c3c;
+}
+
+.password-strength {
+    margin-top: 0.5rem;
+}
+
+.strength-bar {
+    width: 100%;
+    height: 4px;
+    background: #e1e8ed;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.strength-fill.weak {
+    width: 33%;
+    background: #e74c3c;
+}
+
+.strength-fill.medium {
+    width: 66%;
+    background: #f39c12;
+}
+
+.strength-fill.strong {
+    width: 100%;
+    background: #27ae60;
+}
+
+.strength-text {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.match-indicator {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    font-size: 1.2rem;
+}
+
+.match-indicator.match {
+    color: #27ae60;
+}
+
+.match-indicator.no-match {
+    color: #e74c3c;
+}
+
+.checkbox-group {
+    margin: 2rem 0;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.terms-link {
+    color: #3498db;
+    text-decoration: none;
+    margin-left: auto;
+    font-size: 0.8rem;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+.register-btn {
+    width: 100%;
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.register-btn:hover:not(:disabled) {
+    background: #219a52;
+}
+
+.register-btn:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+.login-link {
+    margin-bottom: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    color: #2980b9;
+}
+
+.back-to-shop {
+    border-top: 1px solid #e1e8ed;
+    padding-top: 1rem;
+}
+
+.back-to-shop a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.back-to-shop a:hover {
+    color: #333;
+}
+
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #27ae60;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+.loading-overlay p {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.modal-text {
+    line-height: 1.6;
+    color: #333;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+    .register-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .email-check {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #check-email-btn {
+        align-self: stretch;
+    }
+    
+    .checkbox-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .terms-link {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page - MGB</title>
+    <link rel="stylesheet" href="mypage-styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo"><a href="index.html">MGB</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#collection">COLLECTION</a></li>
+                    <li><a href="index.html#lookbook">LOOKBOOK</a></li>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <li><a href="mypage.html" class="active">MY PAGE</a></li>
+                </ul>
+                <div class="user-section">
+                    <span id="user-greeting" class="user-greeting"></span>
+                    <div class="cart-icon">
+                        <span class="cart-count">0</span>
+                        🛒
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="mypage-container">
+            <div class="sidebar">
+                <div class="user-profile">
+                    <div class="profile-image">
+                        <img id="profile-img" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Profile">
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="profile-name">USER NAME</h2>
+                        <p id="profile-email">user@email.com</p>
+                        <p class="member-since">Member since <span id="member-date">2024</span></p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#profile" class="nav-item active" data-section="profile">PROFILE</a></li>
+                        <li><a href="#orders" class="nav-item" data-section="orders">ORDER HISTORY</a></li>
+                        <li><a href="#wishlist" class="nav-item" data-section="wishlist">WISHLIST</a></li>
+                        <li><a href="#address" class="nav-item" data-section="address">ADDRESSES</a></li>
+                        <li><a href="#settings" class="nav-item" data-section="settings">SETTINGS</a></li>
+                        <li><a href="#" class="nav-item logout">LOGOUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="main-content">
+                <!-- Profile Section -->
+                <section id="profile-section" class="content-section active">
+                    <div class="section-header">
+                        <h1>PROFILE INFORMATION</h1>
+                        <p>Manage your personal information and preferences</p>
+                    </div>
+
+                    <div class="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">FIRST NAME</label>
+                                <input type="text" id="first-name" name="first-name" placeholder="Enter first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">LAST NAME</label>
+                                <input type="text" id="last-name" name="last-name" placeholder="Enter last name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" placeholder="Enter email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">PHONE NUMBER</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birth-date">BIRTH DATE</label>
+                            <input type="date" id="birth-date" name="birth-date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">GENDER</label>
+                            <select id="gender" name="gender">
+                                <option value="">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <button class="save-btn" id="save-profile">SAVE CHANGES</button>
+                    </div>
+                </section>
+
+                <!-- Orders Section -->
+                <section id="orders-section" class="content-section">
+                    <div class="section-header">
+                        <h1>ORDER HISTORY</h1>
+                        <p>Track your orders and view purchase history</p>
+                    </div>
+
+                    <div class="orders-filter">
+                        <button class="filter-btn active" data-filter="all">ALL ORDERS</button>
+                        <button class="filter-btn" data-filter="completed">COMPLETED</button>
+                        <button class="filter-btn" data-filter="processing">PROCESSING</button>
+                        <button class="filter-btn" data-filter="cancelled">CANCELLED</button>
+                    </div>
+
+                    <div class="orders-list" id="orders-list">
+                        <!-- Orders will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Wishlist Section -->
+                <section id="wishlist-section" class="content-section">
+                    <div class="section-header">
+                        <h1>WISHLIST</h1>
+                        <p>Your saved items for future purchase</p>
+                    </div>
+
+                    <div class="wishlist-grid" id="wishlist-grid">
+                        <!-- Wishlist items will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Address Section -->
+                <section id="address-section" class="content-section">
+                    <div class="section-header">
+                        <h1>DELIVERY ADDRESSES</h1>
+                        <p>Manage your shipping addresses</p>
+                        <button class="add-address-btn">ADD NEW ADDRESS</button>
+                    </div>
+
+                    <div class="addresses-list" id="addresses-list">
+                        <!-- Addresses will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings-section" class="content-section">
+                    <div class="section-header">
+                        <h1>ACCOUNT SETTINGS</h1>
+                        <p>Manage your account preferences and security</p>
+                    </div>
+
+                    <div class="settings-form">
+                        <div class="settings-group">
+                            <h3>NOTIFICATIONS</h3>
+                            <div class="setting-item">
+                                <label class="switch">
+                                    <input type="checkbox" id="email-notifications" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="setting-info">
+                                    <h4>Email Notifications</h4>
+                                    <p>Receive updates about orders and promotions</p>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <label class="switch">
+                                    <input type="checkbox" id="sms-notifications">
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="setting-info">
+                                    <h4>SMS Notifications</h4>
+                                    <p>Get text updates about your orders</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>PRIVACY</h3>
+                            <div class="setting-item">
+                                <label class="switch">
+                                    <input type="checkbox" id="marketing-emails" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="setting-info">
+                                    <h4>Marketing Emails</h4>
+                                    <p>Receive promotional emails and news</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>SECURITY</h3>
+                            <button class="change-password-btn">CHANGE PASSWORD</button>
+                            <button class="delete-account-btn">DELETE ACCOUNT</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Address Modal -->
+    <div id="address-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>ADD NEW ADDRESS</h2>
+            <form id="address-form">
+                <div class="form-group">
+                    <label for="address-name">ADDRESS NAME</label>
+                    <input type="text" id="address-name" placeholder="e.g., Home, Office">
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name">RECIPIENT NAME</label>
+                    <input type="text" id="recipient-name" placeholder="Full name">
+                </div>
+                <div class="form-group">
+                    <label for="phone-number">PHONE NUMBER</label>
+                    <input type="tel" id="phone-number" placeholder="Phone number">
+                </div>
+                <div class="form-group">
+                    <label for="postal-code">POSTAL CODE</label>
+                    <input type="text" id="postal-code" placeholder="Postal code">
+                </div>
+                <div class="form-group">
+                    <label for="address-line1">ADDRESS LINE 1</label>
+                    <input type="text" id="address-line1" placeholder="Street address">
+                </div>
+                <div class="form-group">
+                    <label for="address-line2">ADDRESS LINE 2</label>
+                    <input type="text" id="address-line2" placeholder="Apartment, suite, etc.">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">CITY</label>
+                        <input type="text" id="city" placeholder="City">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">STATE</label>
+                        <input type="text" id="state" placeholder="State">
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn">CANCEL</button>
+                    <button type="submit" class="save-btn">SAVE ADDRESS</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>SHOPPING BAG</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>TOTAL: ₩<span id="total-price">0</span></strong>
+            </div>
+            <button class="checkout-btn">CHECKOUT</button>
+        </div>
+    </div>
+
+    <script src="mypage-script.js"></script>
+</body>
+</html>

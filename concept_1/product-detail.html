@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - MGB</title>
+    <link rel="stylesheet" href="product-detail-styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo"><a href="index.html">MGB</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#products">COLLECTION</a></li>
+                    <li><a href="index.html#categories">CATEGORIES</a></li>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <li><a href="login.html" class="login-link" id="login-nav-link">LOGIN</a></li>
+                    <li><a href="mypage.html" class="mypage-link" id="mypage-nav-link" style="display: none;">MY PAGE</a></li>
+                </ul>
+                <div class="user-section">
+                    <span id="user-greeting" class="user-greeting"></span>
+                    <div class="cart-icon">
+                        <span class="cart-count">0</span>
+                        🛒
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">HOME</a> / <a href="index.html#products">COLLECTION</a> / <span id="product-breadcrumb">PRODUCT</span>
+            </div>
+        </div>
+
+        <div class="product-detail-container">
+            <div class="product-images">
+                <div class="main-image">
+                    <img id="main-product-image" src="" alt="Product Image">
+                </div>
+                <div class="thumbnail-images">
+                    <img class="thumbnail active" src="" alt="Product Image 1">
+                    <img class="thumbnail" src="" alt="Product Image 2">
+                    <img class="thumbnail" src="" alt="Product Image 3">
+                    <img class="thumbnail" src="" alt="Product Image 4">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 id="product-name">PRODUCT NAME</h1>
+                <p class="product-price" id="product-price">₩0</p>
+                
+                <div class="product-description">
+                    <p id="product-description">Product description will be loaded here.</p>
+                </div>
+
+                <div class="product-options">
+                    <div class="size-selection">
+                        <h3>SIZE</h3>
+                        <div class="size-buttons">
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                            <button class="size-btn" data-size="XL">XL</button>
+                        </div>
+                    </div>
+
+                    <div class="color-selection">
+                        <h3>COLOR</h3>
+                        <div class="color-buttons">
+                            <button class="color-btn active" data-color="black" style="background: #000;"></button>
+                            <button class="color-btn" data-color="white" style="background: #fff; border: 1px solid #ddd;"></button>
+                            <button class="color-btn" data-color="gray" style="background: #888;"></button>
+                        </div>
+                    </div>
+
+                    <div class="quantity-selection">
+                        <h3>QUANTITY</h3>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus">-</button>
+                            <span class="quantity">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="add-to-cart-btn" id="add-to-cart">ADD TO CART</button>
+                    <button class="buy-now-btn">BUY NOW</button>
+                </div>
+
+                <div class="product-details">
+                    <div class="detail-section">
+                        <h3>PRODUCT DETAILS</h3>
+                        <ul id="product-details-list">
+                            <li>Material: Cotton 100%</li>
+                            <li>Made in Korea</li>
+                            <li>Semi-oversized fit</li>
+                            <li>Machine washable</li>
+                        </ul>
+                    </div>
+
+                    <div class="size-guide">
+                        <h3>SIZE GUIDE</h3>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>SIZE</th>
+                                    <th>CHEST</th>
+                                    <th>LENGTH</th>
+                                    <th>SHOULDER</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>S</td>
+                                    <td>52cm</td>
+                                    <td>68cm</td>
+                                    <td>44cm</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>55cm</td>
+                                    <td>70cm</td>
+                                    <td>47cm</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>58cm</td>
+                                    <td>72cm</td>
+                                    <td>50cm</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>61cm</td>
+                                    <td>74cm</td>
+                                    <td>53cm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-products">
+            <div class="container">
+                <h2>RELATED PRODUCTS</h2>
+                <div class="related-grid" id="related-products-grid">
+                    <!-- Related products will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 MGB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>SHOPPING BAG</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>TOTAL: ₩<span id="total-price">0</span></strong>
+            </div>
+            <button class="checkout-btn">CHECKOUT</button>
+        </div>
+    </div>
+
+    <script src="product-detail-script.js"></script>
+</body>
+</html>
